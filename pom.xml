@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>alexa-skills-kit-samples</groupId>
   <artifactId>helloworld</artifactId>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
   <version>1.0</version>
   <name>helloworld</name>
   <url>http://developer.amazon.com/ask</url>
@@ -89,7 +89,8 @@
   </properties>
 
   <build>
-    <sourceDirectory>src</sourceDirectory>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <finalName>santa-time</finalName>
     <resources>
       <resource>
         <directory>src/resources</directory>
@@ -97,6 +98,7 @@
     </resources>
     <pluginManagement>
       <plugins>
+      
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
@@ -106,6 +108,15 @@
             <target>1.7</target>
           </configuration>
         </plugin>
+        
+        <plugin>
+        <groupId>com.heroku.sdk</groupId>
+        <artifactId>heroku-maven-plugin</artifactId>
+        <version>1.2.1</version>
+        <configuration>
+  <appName>santa</appName>
+</configuration>
+      </plugin>
 
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
