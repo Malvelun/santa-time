@@ -54,8 +54,8 @@ public class HelloWorldSpeechlet implements SpeechletV2 {
         Intent intent = request.getIntent();
         String intentName = (intent != null) ? intent.getName() : null;
 
-        if ("HelloWorldIntent".equals(intentName)) {
-            return getHelloResponse();
+        if ("ChristmasIntent".equals(intentName)) {
+            return getSantaResponse();
         } else if ("AMAZON.HelpIntent".equals(intentName)) {
             return getHelpResponse();
         } else {
@@ -90,6 +90,26 @@ public class HelloWorldSpeechlet implements SpeechletV2 {
 
         // Create the Simple card content.
         SimpleCard card = getSimpleCard("HelloWorld", speechText);
+
+        // Create the plain text output.
+        PlainTextOutputSpeech speech = getPlainTextOutputSpeech(speechText);
+
+        return SpeechletResponse.newTellResponse(speech, card);
+    }
+    
+    /**
+     * Creates a {@code SpeechletResponse} for the hello intent.
+     *
+     * @return SpeechletResponse spoken and visual response for the given intent
+     */
+    private SpeechletResponse getSantaResponse() {
+    	SantaTimeV2 dayCounter = new SantaTimeV2();
+    	int days = dayCounter.getDaysToChristmas(false, true);
+    	
+        String speechText = "Only "+days+" more days to sleep until Santa is coming!";
+
+        // Create the Simple card content.
+        SimpleCard card = getSimpleCard("SantaTime", speechText);
 
         // Create the plain text output.
         PlainTextOutputSpeech speech = getPlainTextOutputSpeech(speechText);

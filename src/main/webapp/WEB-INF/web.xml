@@ -9,7 +9,7 @@
   <servlet-class>com.amazon.asksdk.helloworld.SantaTimeServlet</servlet-class>
 </servlet>
 <servlet-mapping>
-  <servlet-name>SantaServlet</servlet-name>
+  <servlet-name>SantaTimeServlet</servlet-name>
   <url-pattern>/santa</url-pattern>
 </servlet-mapping>
 
