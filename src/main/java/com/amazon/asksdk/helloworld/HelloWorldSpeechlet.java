@@ -109,7 +109,7 @@ public class HelloWorldSpeechlet implements SpeechletV2 {
         String speechText = "Only "+days+" more days to sleep until Santa is coming!";
 
         // Create the Simple card content.
-        SimpleCard card = getSimpleCard("SantaTime", speechText);
+        SimpleCard card = getSimpleCard("HelloWorld", speechText);
 
         // Create the plain text output.
         PlainTextOutputSpeech speech = getPlainTextOutputSpeech(speechText);

@@ -36,7 +36,7 @@ public class DeviceAddressSpeechletRequestStreamHandler extends SpeechletRequest
          * Alexa Skill and put the relevant Application Ids in this Set.
          */
         supportedApplicationIds = new HashSet<String>();
-        // supportedApplicationIds.add("[unique-value-here]");
+        supportedApplicationIds.add("amzn1.ask.skill.0471c64a-5dd7-4470-ad36-03134c6c68bc");
     }
 
     public DeviceAddressSpeechletRequestStreamHandler() {
